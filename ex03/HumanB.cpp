@@ -1,11 +1,22 @@
 #include "HumanB.hpp"
 
-void	HumanB(std::string name)
+HumanB::HumanB(std::string name): _name(name), _weapon(NULL)
 {
-	_name = name;
 }
 
-void	setWeapon(Weapon Weapon)
+HumanB::~HumanB()
 {
-	_weapon = Weapon;
+}
+
+void	HumanB::setWeapon(Weapon &Weapon)
+{
+	_weapon = &Weapon;
+}
+
+void	HumanB::attack()
+{
+	if (_weapon == nullptr)
+		std::cout << _name << " is screwed" << std::endl;
+	else
+		std::cout << _name << " attacks with their weapon " << _weapon->getType() << std::endl;
 }

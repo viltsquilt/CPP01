@@ -2,7 +2,7 @@
 
 int	main()
 {
-	int	N = 5;
+	int	N = -1;
 
 	if (N > 0)
 	{
